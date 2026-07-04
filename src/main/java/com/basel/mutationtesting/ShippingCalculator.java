@@ -13,10 +13,10 @@ public class ShippingCalculator {
         }
 
         double cost = BASE_RATE + (weightKg * PER_KG_RATE);
-
-        if (weightKg >= 20) {
-            cost += HEAVY_SURCHARGE;
-        }
-        return cost;
+//
+//        if (weightKg >= 20) {
+//            cost += HEAVY_SURCHARGE;
+//        }
+        return cost + HEAVY_SURCHARGE;
     }
 }
