@@ -8,7 +8,7 @@ public class ShippingCalculator {
     public static final double ZERO_SHIPPING_COST = 0.0;
 
     public double calculateShipping(double orderTotal, double weightKg, boolean isPremiumMember) {
-        if (isPremiumMember || orderTotal >= FREE_SHIPPING_THRESHOLD) {
+        if (isPremiumMember || orderTotal > FREE_SHIPPING_THRESHOLD) {
             return ZERO_SHIPPING_COST;
         }
 
