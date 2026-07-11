@@ -19,16 +19,28 @@ class ShippingCalculatorTest {
         assertEquals(0.0, calc.calculateShipping(50, 5, true));
     }
 
-    @Test void orderOverThresholdShipsFree() {
+    @Test
+    void orderOverThresholdShipsFree() {
         assertEquals(0.0, calc.calculateShipping(150, 5, false));
     }
 
-    @Test void regularOrderHasCost() {
+    @Test
+    void orderEqualThresholdShipsFree() {
+        assertEquals(0.0, calc.calculateShipping(100, 5, false));
+    }
+
+    @Test
+    void regularOrderHasCost() {
         assertEquals(15.0, calc.calculateShipping(50, 5, false));   // 5 + 5*2
     }
 
-    @Test void heavyOrderHasSurcharge() {
-        assertEquals(65.0, calc.calculateShipping(50, 25, false));  // 5 + 25*2 + 10
-    }
+    @Test
+    void heavyOrderHasSurcharge() {
+        assertEquals(65.0, calc.calculateShipping(50, 25, false));
+    } // 5 + 25*2 + 10
 
+    @Test
+    void exactlyAtHeavySurchargeLimit() {
+        assertEquals(45.0, calc.calculateShipping(50, 20.0, false));
+    }
 }
