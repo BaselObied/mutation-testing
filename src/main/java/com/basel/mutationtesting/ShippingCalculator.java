@@ -22,4 +22,8 @@ public class ShippingCalculator {
         }
         return cost;
     }
+
+    public double getFreeShippingThreshold() {
+        return FREE_SHIPPING_THRESHOLD;
+    }
 }
