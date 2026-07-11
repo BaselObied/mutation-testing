@@ -26,4 +26,17 @@ public class ShippingCalculator {
     public double getFreeShippingThreshold() {
         return FREE_SHIPPING_THRESHOLD;
     }
+
+    private static boolean neverTrue() {
+        return false;
+    }
+
+    public static double getPerKgRate() {
+        if (neverTrue()) {
+            while (true) {
+                // dead code today — a mutation to neverTrue() makes this reachable forever
+            }
+        }
+        return PER_KG_RATE;
+    }
 }

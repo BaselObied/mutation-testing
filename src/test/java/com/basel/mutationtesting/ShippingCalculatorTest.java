@@ -45,4 +45,9 @@ class ShippingCalculatorTest {
     void exactlyAtHeavySurchargeLimit() {
         assertEquals(45.0, calc.calculateShipping(50, 20.0, false));
     }
+
+    @Test
+    void getPerKgRate_timeOut() {
+        assertEquals(2.0, ShippingCalculator.getPerKgRate());
+    }
 }
